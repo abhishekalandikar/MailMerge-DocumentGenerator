@@ -43,14 +43,17 @@ Getting Started
 Clone the repository
 
 bash
-Copy code
+
 git clone https://github.com/abhishekalandikar/DocumentGeneration.git
+
 Open the project in Visual Studio
 
 Configure the database
 
 Ensure your SQL Server is running.
+
 Update the connection string in Web.config to match your database settings.
+
 Run the application
 
 Press F5 to run the application.
