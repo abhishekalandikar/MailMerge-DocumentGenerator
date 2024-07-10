@@ -40,21 +40,22 @@ Index.cshtml: Default landing page.
 Data: Folder containing the Word document template (SampleDocument.docx).
 
 Getting Started
-Clone the repository
+
+1.Clone the repository
 
 bash
 
 git clone https://github.com/abhishekalandikar/DocumentGeneration.git
 
-Open the project in Visual Studio
+2.Open the project in Visual Studio
 
-Configure the database
+3.Configure the database
 
 Ensure your SQL Server is running.
 
-Update the connection string in Web.config to match your database settings.
+4.Update the connection string in Web.config to match your database settings.
 
-Run the application
+5.Run the application
 
 Press F5 to run the application.
 Navigate to the CreateDocument page to fill out the form and generate a document.
