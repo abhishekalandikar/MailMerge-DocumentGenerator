@@ -29,7 +29,7 @@ Document Generation: Generate a Word document using a predefined template with c
 
 # Folder Structure
 
-  ## Controllers: Contains the HomeController which handles form submission, document creation, and database operations.
+  Controllers: Contains the HomeController which handles form submission, document creation, and database operations.
 
   Models: Contains the Customer model representing customer data and the DemoEntities DbContext for database access.
 
