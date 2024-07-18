@@ -1,0 +1,44 @@
+﻿@model CreateWordSample.Models.Customer
+
+@{
+    ViewBag.Title = "Create Document Form";
+}
+
+<h2>Document Form</h2>
+
+@using (Html.BeginForm("CreateDocument", "Home", FormMethod.Post))
+{
+    <div style="margin-bottom:10px;">
+        <label for="CustomerId">Customer Id:</label>
+        @Html.TextBoxFor(m => m.CustomerId, new { style = "width:300px;" })
+    </div>
+
+    <div style="margin-bottom:10px;">
+        <label for="Name">Name:</label>
+        @Html.TextBoxFor(m => m.Name, new { style = "width:300px;" })
+    </div>
+
+    <div style="margin-bottom:10px;">
+        <label for="Address">Address:</label>
+        @Html.TextBoxFor(m => m.Address, new { style = "width:300px;" })
+    </div>
+
+    <div style="margin-bottom:10px;">
+        <label for="PhoneNumber">Phone Number:</label>
+        @Html.TextBoxFor(m => m.PhoneNumber, new { style = "width:300px;" })
+    </div>
+
+    <div style="margin-bottom:10px;">
+        <label for="Aadhar">Aadhar:</label>
+        @Html.TextBoxFor(m => m.Aadhar, new { style = "width:300px;" })
+    </div>
+
+    <div style="margin-bottom:10px;">
+        <label for="PAN">PAN:</label>
+        @Html.TextBoxFor(m => m.PAN, new { style = "width:300px;" })
+    </div>
+
+    <div>
+        <input type="submit" value="Create Document" style="width:150px;height:27px" />
+    </div>
+}
