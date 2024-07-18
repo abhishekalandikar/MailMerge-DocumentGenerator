@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using System.Web.Mvc;
 using CreateWordSample.Models;
 using Syncfusion.DocIO;
@@ -8,7 +8,7 @@ namespace CreateWordSample.Controllers
 {
     public class HomeController : Controller
     {
-        private DemoEntities db = new DemoEntities();
+        private CompanyEntities db = new CompanyEntities();
 
         // GET: Home/Index
         public ActionResult Index()
@@ -29,25 +29,25 @@ namespace CreateWordSample.Controllers
             if (ModelState.IsValid)
             {
                 // Map Customer model to Demo entity
-                var demo = new Demo
+                var demo = new Company
                 {
-                    ContactName = model.ContactName,
-                    CompanyName = model.CompanyName,
+                    CustomerId = model.CustomerId,
+                    Name = model.Name,
                     Address = model.Address,
-                    City = model.City,
-                    Country = model.Country,
-                    Phone = model.Phone
+                    PhoneNumber = model.PhoneNumber,
+                    Aadhar = model.Aadhar,
+                    PAN = model.PAN
                 };
 
                 // Add the entity to the DbSet and save changes
-                db.Demoes.Add(demo);
+                db.Companies.Add(demo);
                 db.SaveChanges();
 
                 // Opens the Word template document
                 using (WordDocument document = new WordDocument(ResolveApplicationDataPath("SampleDocument.docx")))
                 {
-                    string[] fieldNames = { "ContactName", "CompanyName", "Address", "City", "Country", "Phone" };
-                    string[] fieldValues = { model.ContactName, model.CompanyName, model.Address, model.City, model.Country, model.Phone };
+                    string[] fieldNames = { "CustomerId", "Name", "Address", "PhoneNumber", "Aadhar", "PAN" };
+                    string[] fieldValues = { model.CustomerId.ToString(), model.Name, model.Address, model.PhoneNumber, model.Aadhar, model.PAN };
 
                     // Performs the mail merge
                     document.MailMerge.Execute(fieldNames, fieldValues);
@@ -63,17 +63,9 @@ namespace CreateWordSample.Controllers
             return View(model);
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-            return View();
-        }
+        
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-            return View();
-        }
+        
 
         protected string ResolveApplicationDataPath(string fileName)
         {
